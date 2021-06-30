@@ -12,3 +12,12 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+//promt for password length
+//Record length to variable
+//promt for character types
+//validate that atleast 1 character type is selected
+//record character types to variables
+//generate random number
+//turn that number into base-36
+//
