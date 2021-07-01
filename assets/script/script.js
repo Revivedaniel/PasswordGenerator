@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 var uppercaseCharCodes = arrayFromLowToHigh(65, 90)
 var lowercaseCharCodes = arrayFromLowToHigh(97, 122)
 var numberCharCodes = arrayFromLowToHigh(48, 57)
-var symbolCharCodes = arrayFromLowToHigh(33, 47).concat(arrayFromLowToHigh(58, 64)).concat(arrayFromLowToHigh(91, 96)).concat(arrayFromLowToHigh(123, 126))
+var specialCharCodes = arrayFromLowToHigh(33, 47).concat(arrayFromLowToHigh(58, 64)).concat(arrayFromLowToHigh(91, 96)).concat(arrayFromLowToHigh(123, 126))
 
 // Write password to the #password input
 function writePassword() {
@@ -42,6 +42,19 @@ function generatePassword() {
     
   }
   
+  let charCodes = []
+  if (lowerCase) {
+    charCodes = charCodes.concat(lowercaseCharCodes)
+  }
+  if (upperCase) {
+    charCodes = charCodes.concat(uppercaseCharCodes)
+  }
+  if (numeric) {
+    charCodes = charCodes.concat(numberCharCodes)
+  }
+  if (specialChar) {
+    charCodes = charCodes.concat(specialCharCodes)
+  }
   
 }
 
