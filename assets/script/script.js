@@ -1,6 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//Defining the ascii codes for each selection
+var uppercaseCharCodes = arrayFromLowToHigh(65, 90)
+var lowercaseCharCodes = arrayFromLowToHigh(97, 122)
+var numberCharCodes = arrayFromLowToHigh(48, 57)
+var symbolCharCodes = arrayFromLowToHigh(33, 47).concat(arrayFromLowToHigh(58, 64)).concat(arrayFromLowToHigh(91, 96)).concat(arrayFromLowToHigh(123, 126))
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -35,9 +41,19 @@ function generatePassword() {
     }
     
   }
+  
+  
+}
 
-
-  }
+//this pushes all the ascii characters into their arrays
+function arrayFromLowToHigh(low, high) {
+  const array = [];
+    for (let i = low; i < high; i++) {
+      array.push(i)
+      
+    }
+    return array;
+}
    
 
 
