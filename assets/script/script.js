@@ -1,6 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//Variables for selection
+var lowerCase = false;
+var upperCase = false;
+var numeric = false;
+var specialChars = false;
+
+
 //Defining the ascii codes for each selection
 var uppercaseCharCodes = arrayFromLowToHigh(65, 90)
 var lowercaseCharCodes = arrayFromLowToHigh(97, 122)
@@ -11,9 +18,19 @@ var specialCharCodes = arrayFromLowToHigh(33, 47).concat(arrayFromLowToHigh(58, 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  
   passwordText.value = password;
+  
+}
 
+//this pushes all the ascii characters into their arrays
+function arrayFromLowToHigh(low, high) {
+  const array = [];
+    for (let i = low; i < high; i++) {
+      array.push(i)
+      
+    }
+    return array;
 }
 
 // Add event listener to generate button
@@ -42,6 +59,7 @@ function generatePassword() {
     
   }
   
+  //Beginning of actual password generation
   let charCodes = []
   if (lowerCase) {
     charCodes = charCodes.concat(lowercaseCharCodes)
@@ -56,17 +74,17 @@ function generatePassword() {
     charCodes = charCodes.concat(specialCharCodes)
   }
   
+  //using random numbers from out charCodes we generate the password array
+  var passwordCharacters = [];
+  for (let i = 0; i < charLength; i++) {
+    var characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+    passwordCharacters.push(String.fromCharCode(characterCode))  
+  }
+  //returning the password generated as a string
+  return passwordCharacters.join("")
+
 }
 
-//this pushes all the ascii characters into their arrays
-function arrayFromLowToHigh(low, high) {
-  const array = [];
-    for (let i = low; i < high; i++) {
-      array.push(i)
-      
-    }
-    return array;
-}
    
 
 
