@@ -14,7 +14,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 //generate password function
-function generatePassword(lowerCase, upperCase, numeric, specialChar, charLength) {
+function generatePassword() {
   //Variable to validate atleast one selection was made
   var oneSelected = false;
   var selectionArray = []
@@ -35,24 +35,7 @@ function generatePassword(lowerCase, upperCase, numeric, specialChar, charLength
     }
     
   }
-  //Pre made array to help with crypto length
-  var randomString = [];
 
-  //defines how many crypto entries we will need
-  var cryptoNum = Math.ceil(charLength/10);
-  //creates an array of random numbers in sections of 10
-  
-  //creates a new Uint32Array with cryptoNum amount of entries
-  var array = new Uint32Array(cryptoNum);
-  //gets random values and places them inside of array cryptoNum amount of times
-  for (let i = 0; i < cryptoNum; i++) {
-    window.crypto.getRandomValues(array);
-  }
-  
-  for (let i = 0; i < array.length; i++) {
-    randomString.push(parseInt(array[i]))
-}
-console.log(randomString)
 
   }
    
