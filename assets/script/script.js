@@ -1,20 +1,20 @@
-// Assignment Code
+//placing the 'generate' button into a variable
 var generateBtn = document.querySelector("#generate");
 
-//Variables for selection
+//Declairing the choices for generation
 var lowerCase = false;
 var upperCase = false;
 var numeric = false;
 var specialChars = false;
 
 
-//Defining the ascii codes for each selection
+//this places the given range of numbers in an array from lowest number to highest
 var uppercaseCharCodes = arrayFromLowToHigh(65, 90)
 var lowercaseCharCodes = arrayFromLowToHigh(97, 122)
 var numberCharCodes = arrayFromLowToHigh(48, 57)
 var specialCharCodes = arrayFromLowToHigh(33, 47).concat(arrayFromLowToHigh(58, 64)).concat(arrayFromLowToHigh(91, 96)).concat(arrayFromLowToHigh(123, 126))
 
-// Write password to the #password input
+// Write password to the #password input element
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
