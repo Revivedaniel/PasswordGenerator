@@ -43,6 +43,9 @@ function generatePassword() {
   var selectionArray = []
 
   charLength = prompt("How many digits do you want the password to be?\nMin 8 Max 128 Characters")
+  while (charLength >= 129 || charLength <= 7) {
+    charLength = prompt("How many digits do you want the password to be?\nMin 8 Max 128 Characters");
+  }
   
   //asking for password criteria
   while (!oneSelected) {

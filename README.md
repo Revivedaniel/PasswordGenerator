@@ -10,7 +10,7 @@ and fifth, "Do you want special characters in your password?"
 
 Once you've made your selection, the JavaScript will generate you a password and it is written to the text box for you to copy.
 
-![passwordGeneratorDemo](https://github.com/Revivedaniel/PasswordGenerator/blob/main/assets/vids/passwordGeneratorDemo.gif)
+![passwordGeneratorDemo](./assets/vids/passwordGeneratorDemo.gif)
 
 ## Deployed site:
 https://revivedaniel.github.io/PasswordGenerator/
